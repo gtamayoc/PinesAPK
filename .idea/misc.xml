@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/WPOSS/AndroidStudioProjects/Pines/app/src/main/res/layout/activity_inicio.xml" value="0.34307692307692306" />
         <entry key="..\:/Users/WPOSS/AndroidStudioProjects/Pines/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/WPOSS/AndroidStudioProjects/Pines/app/src/main/res/layout/activity_splash_screnn.xml" value="0.33" />
+        <entry key="..\:/Users/WPOSS/AndroidStudioProjects/Pines/app/src/main/res/layout/pines_element.xml" value="0.5" />
       </map>
     </option>
   </component>

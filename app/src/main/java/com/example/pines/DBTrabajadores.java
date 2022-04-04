@@ -1,5 +1,6 @@
 package com.example.pines;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -67,9 +68,21 @@ public class DBTrabajadores {
     }
 
 
+    public boolean consultar(String nombreUsuario, String contrasena){
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM trabajador WHERE nombre_usuario='"+nombreUsuario+"' AND contrasena='"+contrasena+"'", null);
+        if (cursor.moveToFirst()) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+
+
     public int login(String nombreUsuario, String contrasena){
         int a=0;
-        try (Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM trabajador", null)) {
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM trabajador where nombre_usuario='Giuseppe' and contrasena=123", null);
             if (cursor != null && cursor.moveToFirst()) {
                 do {
                     if (cursor.getString(5).equals(nombreUsuario) && cursor.getString(6).equals(contrasena)) {
@@ -77,9 +90,12 @@ public class DBTrabajadores {
                     }
                 } while (cursor.moveToNext());
             }
-        }
         return a;
     }
+
+
+
+
 
 
     public Trabajador getTrabajador(String nombreUsuario,String contrasena) {

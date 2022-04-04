@@ -14,6 +14,8 @@ public class DBPaquete {
     ArrayList<paquete> listaPaquetes;
     SQLiteDatabase sqLiteDatabase;
     String bd = "BDPines";
+
+
     String tablaPaquetes = "CREATE TABLE IF NOT EXISTS paquete(" +
             "id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "nombre TEXT ," +
@@ -28,7 +30,7 @@ public class DBPaquete {
 
     }
 
-    public boolean insertarTrabajador(Trabajador trabajador) {
+    public boolean insertarPaquetes(paquete paquete) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("nombre", trabajador.getNombre());
         contentValues.put("descripcion", trabajador.getApellido());

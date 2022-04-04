@@ -44,10 +44,11 @@ public class splash_screnn extends AppCompatActivity {
 
                 if(nombreUsuario.equals("")||contrasena.equals("")){
                     Toast.makeText(splash_screnn .this, "Error: Campos Vacios", Toast.LENGTH_SHORT).show();
-                }else if(DBTrabajadores.login(nombreUsuario,contrasena)==1){
-                    Toast.makeText(splash_screnn .this, nombreUsuario, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(splash_screnn .this, contrasena, Toast.LENGTH_SHORT).show();
-                }else{
+                }else if (DBTrabajadores.consultar(nombreUsuario, contrasena)) {
+                    Intent i = new Intent(getApplicationContext(), Inicio.class);
+                    i.putExtra("nombreUsuario", nombreUsuario);
+                    startActivity(i);
+                } else {
                     Toast.makeText(splash_screnn .this, "Errologin", Toast.LENGTH_SHORT).show();
                     Toast.makeText(splash_screnn .this, nombreUsuario, Toast.LENGTH_SHORT).show();
                     Toast.makeText(splash_screnn .this, contrasena, Toast.LENGTH_SHORT).show();
